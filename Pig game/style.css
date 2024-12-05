@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
+
+:root {
+  --color-0: black;
+  --color-1: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  color: #333;
+  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes main-animation {
+  0% {
+    width: 0rem;
+  }
+
+  100% {
+    width: 100rem;
+  }
+}
+
+main {
+  position: relative;
+  height: 60rem;
+  background-color: rgb(232, 232, 232);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  animation: main-animation 2s forwards;
+  z-index: 1;
+  /* align-items: center; */
+}
+
+/*Animating game name*/
+
+@keyframes name-animation {
+  0% {
+    left: 676px;
+    opacity: 0;
+  }
+
+  100% {
+    left: 173px;
+    opacity: 1;
+  }
+}
+.game-name {
+  opacity: 0;
+  font-family: 'Rowdies', sans-serif;
+  position: absolute;
+  font-size: 2.3em;
+  background: #f85032; /* fallback for old browsers */
+  background: linear-gradient(to right, #e73827, #f85032);
+  color: rgb(255, 255, 255);
+  height: 4rem;
+  width: 15rem;
+  text-align: center;
+  font-weight: 700;
+  top: 338.8px;
+  rotate: -90deg;
+  padding: 5px 0 0;
+  border-radius: 9px 9px 0 0;
+  box-shadow: inset -0px -5px rgba(0, 0, 0, 0.2);
+  animation: name-animation 1s forwards 1s ease-out;
+}
+
+/* ANimating rules button*/
+
+@keyframes rules-animation {
+  0% {
+    right: 676px;
+    z-index: 0;
+    opacity: 0;
+  }
+
+  100% {
+    right: 170px;
+    z-index: 0;
+    opacity: 1;
+  }
+}
+
+.btn-rule {
+  opacity: 0;
+  font-family: 'Rowdies', sans-serif;
+  position: absolute;
+  font-size: 2.3em;
+  background: #f85032; /* fallback for old browsers */
+  background: linear-gradient(to right, #e73827, #f85032);
+  color: rgb(255, 255, 255);
+  height: 4rem;
+  width: 15rem;
+  text-align: center;
+  font-weight: 700;
+  top: 338.8px;
+  rotate: 90deg;
+  padding: 0;
+  border-radius: 9px 9px 0 0;
+  box-shadow: inset -0px -5px rgba(0, 0, 0, 0.2);
+  border: none;
+  animation: rules-animation 1s forwards 1s ease-out;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Animating player info on main screen*/
+
+@keyframes player-animation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.player {
+  opacity: 0;
+  flex: 50%;
+  text-align: center;
+  padding: 100px 0 50px;
+  z-index: 2;
+  animation: player-animation 1s 0.5s forwards;
+}
+
+.player--active {
+  background-color: white;
+}
+
+.player--active .dot {
+  display: block;
+}
+
+.name {
+  letter-spacing: 0.2em;
+  font-size: 4em;
+  font-weight: 300;
+}
+
+/* Player active dots*/
+.player--0 .dot {
+  position: absolute;
+  top: 6rem;
+  right: 74rem;
+}
+
+.player--1 .dot {
+  position: absolute;
+  top: 6rem;
+  left: 74rem;
+}
+
+/* Global score of both players */
+.score {
+  font-size: 8em;
+  color: rgb(234, 77, 77);
+  margin-top: 50px;
+}
+
+/* Current score of both players */
+.current {
+  border-radius: 9px;
+  margin: 0 auto;
+  margin-top: 135px;
+  width: 12rem;
+  height: 12rem;
+  background-color: #333;
+  color: white;
+}
+
+.current-label {
+  font-size: 1.5em;
+  padding: 15px;
+}
+
+.current-score {
+  font-size: 3.5rem;
+  padding-bottom: 10px;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 5px;
+  position: absolute;
+  height: 3.5rem;
+  width: 10rem;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1.5em;
+  text-align: center;
+  box-shadow: 0px 4px rgb(128, 10, 16);
+  border: none;
+  z-index: 2;
+}
+
+.btn--new {
+  top: 3em;
+  background: #f85032;
+  background: linear-gradient(to right, #e73827, #f85032);
+}
+
+.btn--roll {
+  top: 29em;
+  background-color: #f85032;
+}
+
+.btn--hold {
+  top: 33em;
+  width: 8rem;
+  background-color: #f85032;
+}
+
+.dice {
+  width: 10rem;
+  height: 10rem;
+  position: absolute;
+  top: 19rem;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 2;
+}
+
+/* Winner and looser transition for player 0*/
+.for-animation-0 {
+  position: absolute;
+  width: 0rem;
+  right: 50rem;
+  height: 60rem;
+  top: 0;
+  background-color: none;
+  z-index: -1;
+  transition-property: width, background-color;
+  transition-duration: 2s;
+}
+
+/* Winner and looser transition for player 1*/
+.for-animation-1 {
+  position: absolute;
+  left: 50rem;
+  width: 0rem;
+  background-color: none;
+  height: 60rem;
+  top: 0;
+  z-index: -1;
+  transition-property: width, background-color;
+  transition-duration: 2s;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.563);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+/* Rule book design */
+.rules-book {
+  position: absolute;
+  padding: 2rem 5rem;
+  background-color: rgb(255, 240, 240);
+  width: 60rem;
+  height: 43rem;
+  transform: scale(0);
+  list-style-position: inside;
+  z-index: 6;
+  border-radius: 9px;
+  transition-property: transform;
+  transition-duration: 0.5s;
+}
+
+.rules-heading {
+  font-size: 3em;
+  display: inline;
+}
+
+.rules {
+  font-size: 2em;
+  padding-top: 20px;
+  line-height: 3rem;
+  list-style: outside;
+}
+
+.rule-book-close {
+  float: right;
+  text-align: center;
+  padding: 1px 0;
+  font-size: 2em;
+  height: 2.8rem;
+  width: 3rem;
+  background-color: #f85032;
+  box-shadow: 0px 4px rgb(128, 10, 16);
+}
+
+li {
+  margin-bottom: 10px;
+  display: list-item;
+}
